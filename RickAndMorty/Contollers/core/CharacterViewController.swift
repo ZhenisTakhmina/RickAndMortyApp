@@ -7,6 +7,8 @@
 
 import UIKit
 
+///controller to show and search for character
+
 final class CharacterViewController: UIViewController {
     
 
