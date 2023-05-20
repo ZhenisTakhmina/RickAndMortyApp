@@ -17,7 +17,8 @@ final class CharacterViewController: UIViewController {
 
         view.backgroundColor = .systemBackground
         title = "Characters"
-      
+        let request = Request(endpoint: .episode)
+        print(request.url)
     }
     
    
