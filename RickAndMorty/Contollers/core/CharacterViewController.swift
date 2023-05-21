@@ -17,12 +17,15 @@ final class CharacterViewController: UIViewController {
 
         view.backgroundColor = .systemBackground
         title = "Characters"
-        let request = Request(endpoint: .episode)
-        print(request.url)
+        
+        Service.shared.execute(request: .listCharactersRequests, expecting: GetAllListOfCharactersResponse.self) { result in
+            switch result {
+            case .success(let model):
+                print("Total:" + String(model.info.count))
+            case .failure(let failure):
+                print(String(describing: failure))
+            }
+        }
+        
     }
-    
-   
-
-   
-
 }

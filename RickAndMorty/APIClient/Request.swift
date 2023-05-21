@@ -16,7 +16,7 @@ final class Request {
     }
     
    private let endpoint : Endpoint
-   private let pathComponents : Set<String>
+   private let pathComponents : [String]
    private let queryParameters : [URLQueryItem]
     
     
@@ -53,7 +53,7 @@ final class Request {
     public let httpMethod = "GET"
     
    public init(endpoint:Endpoint,
-               pathComponents: Set<String> = [],
+               pathComponents: [String] = [],
                queryParameters: [URLQueryItem] = []
    ) {
         self.endpoint = endpoint
